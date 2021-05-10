@@ -383,19 +383,17 @@ class Toast extends Component {
 
   render() {
     const { style } = this.props;
-    const { position, keyboardHeight, isVisible } = this.state;
+    const { position, keyboardHeight } = this.state;
     const baseStyle = this.getBaseStyle(position, keyboardHeight);
 
     return (
-      isVisible && (
-        <Animated.View
-          testID='animatedView'
-          onLayout={this.onLayout}
-          style={[baseStyle, style]}
-          {...this.panResponder.panHandlers}>
-          {this.renderContent(this.props)}
-        </Animated.View>
-      )
+      <Animated.View
+        testID='animatedView'
+        onLayout={this.onLayout}
+        style={[baseStyle, style]}
+        {...this.panResponder.panHandlers}>
+        {this.renderContent(this.props)}
+      </Animated.View>
     );
   }
 }
