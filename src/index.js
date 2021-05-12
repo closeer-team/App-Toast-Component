@@ -12,7 +12,7 @@ import { stylePropType } from './utils/prop-types';
 import { isIOS } from './utils/platform';
 import styles from './styles';
 
-const FRICTION = 15;
+const FRICTION = 20;
 
 const defaultComponentsConfig = {
   // eslint-disable-next-line react/prop-types
@@ -205,7 +205,7 @@ class Toast extends Component {
     const treshold = 0.65;
     if (value <= treshold || Math.abs(vy) >= treshold) {
       this.hide({
-        speed: Math.abs(vy) * 3
+        speed: Math.abs(vy) * 5
       });
     } else {
       Animated.spring(animation, {
@@ -378,7 +378,6 @@ class Toast extends Component {
       styles.base,
       styles[position],
       {
-        opacity,
         transform: [{ translateY }]
       }
     ];
