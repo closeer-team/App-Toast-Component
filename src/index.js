@@ -362,16 +362,22 @@ class Toast extends Component {
     // +5 px to completely hide the toast under StatusBar (on Android)
     const range = [height + 5, -offset, -(keyboardOffset + keyboardHeight)];
     const outputRange = position === 'bottom' ? range : complement(range);
+    const inputRange = [0, 1, 2],
 
     const translateY = animation.interpolate({
-      inputRange: [0, 1, 2],
+      inputRange,
       outputRange
+    });
+    const opacity = animation.interpolate({
+      inputRange,
+      outputRange:[0,0.5,1]
     });
 
     return [
       styles.base,
       styles[position],
       {
+        opacity,
         transform: [{ translateY }]
       }
     ];
