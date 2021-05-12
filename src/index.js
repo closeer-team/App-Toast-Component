@@ -12,7 +12,7 @@ import { stylePropType } from './utils/prop-types';
 import { isIOS } from './utils/platform';
 import styles from './styles';
 
-const FRICTION = 8;
+const FRICTION = 15;
 
 const defaultComponentsConfig = {
   // eslint-disable-next-line react/prop-types
@@ -370,7 +370,8 @@ class Toast extends Component {
     });
     const opacity = animation.interpolate({
       inputRange,
-      outputRange:[0,0.5,1]
+      outputRange:[0,0.5,1],
+      extrapolate:'clamp'
     });
 
     return [
