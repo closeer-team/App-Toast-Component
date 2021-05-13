@@ -420,7 +420,7 @@ Toast.propTypes = {
 Toast.defaultProps = {
   config: {},
   style: undefined,
-  topOffset: 200,
+  topOffset: 70,
   bottomOffset: 40,
   keyboardOffset: 15,
   visibilityTime: 4000,
