@@ -129,7 +129,7 @@ BaseToast.defaultProps = {
   textStyle: undefined,
   activeOpacity: 0.8,
   titleNumberOfLines: 1,
-  textNumberOfLines: 2
+  textNumberOfLines: 3
 };
 
 export default BaseToast;
