@@ -231,7 +231,7 @@ class Toast extends Component {
           onLayout will be called again and `height` state will adjust.
 
           This fixes an issue where a succession of calls to components with custom heights (custom Toast types)
-          fails to hide them completely due to always resetting to the default component height
+          fails to hide them completely due to always resetting to the default component height,
       */
       height: prevState.height,
       inProgress: true,
